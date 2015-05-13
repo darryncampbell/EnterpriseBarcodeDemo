@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <!--link rel="stylesheet" type="text/css" href="css/index.css"-->
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap-checkbox.css">
+        <title>Enterprise Barcode Demo</title>
+    </head>
+    <body>
+        <div class="app">
+            <h1>Enterprise Barcode</h1>
+            <div class="container-fluid">
+            <div class="" id="scannerButtons">
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">Scanner Info</div>
+                <div class="panel-body" id="scannerInfo"></div>
+            </div>
+            <input type="button" onclick="javascript:enableBarcode();" value="Enable Barcode" class="btn btn-success"/>
+            <input type="button" onclick="javascript:disableBarcode();" value="Disable Barcode" class="btn btn-danger"/>
+
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup">
+                        <legend>Enabled Symbologies:</legend>
+                        <input type="checkbox" name="checkbox-1" id="checkbox-1" class="custom" />
+                        <label for="checkbox-1">Code 11</label>
+                        <input type="checkbox" name="checkbox-2" id="checkbox-2" class="custom" />
+                        <label for="checkbox-2">Code 128</label>
+                        <input type="checkbox" name="checkbox-3" id="checkbox-3" class="custom" />
+                        <label for="checkbox-3">Code 39</label>
+                        <input type="checkbox" name="checkbox-4" id="checkbox-4" class="custom" />
+                        <label for="checkbox-4">Code 93</label>
+                        <input type="checkbox" name="checkbox-5" id="checkbox-5" class="custom" />
+                        <label for="checkbox-5">Data Matrix</label>
+                        <input type="checkbox" name="checkbox-6" id="checkbox-6" class="custom" />
+                        <label for="checkbox-6">EAN 8</label>
+                        <input type="checkbox" name="checkbox-7" id="checkbox-7" class="custom" />
+                        <label for="checkbox-7">EAN 13</label>
+                        <input type="checkbox" name="checkbox-8" id="checkbox-8" class="custom" />
+                        <label for="checkbox-8">UPCA</label>
+                        <input type="checkbox" name="checkbox-9" id="checkbox-9" class="custom" />
+                        <label for="checkbox-9">UPCE 1</label>
+                        <input type="checkbox" name="checkbox-10" id="checkbox-10" class="custom" />
+                        <label for="checkbox-10">PDF 417</label>
+                    </fieldset>
+                </div>
+            </div>
+
+        </div>
+        <script type="text/javascript" src="cordova.js"></script>
+        <!--script type="text/javascript" src="js/jquery-2.1.4.min.js"></script-->
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap-checkbox.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+    </body>
+</html>
